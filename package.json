@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "serve": "cross-env NODE_ENV=development concurrently \"postcss src/tailwind.css -o src/build/tailwind.css --watch\"  \"live-server ./src\"",
-    "development": "cross-env NODE_ENV=development postcss src/tailwind.css -o src/build/tailwind.css",
-    "production": "cross-env NODE_ENV=production postcss src/tailwind.css -o src/build/tailwind.css",
+    "serve": "cross-env NODE_ENV=development concurrently \"postcss docs/tailwind.css -o docs/build/tailwind.css --watch\"  \"live-server ./docs\"",
+    "development": "cross-env NODE_ENV=development postcss docs/tailwind.css -o docs/build/tailwind.css",
+    "production": "cross-env NODE_ENV=production postcss docs/tailwind.css -o docs/build/tailwind.css",
     "start": "npm run serve"
   },
   "repository": {
