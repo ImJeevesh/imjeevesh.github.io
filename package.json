@@ -1,0 +1,34 @@
+{
+  "name": "imjeevesh",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "serve": "cross-env NODE_ENV=development concurrently \"postcss src/tailwind.css -o src/build/tailwind.css --watch\"  \"live-server ./src\"",
+    "development": "cross-env NODE_ENV=development postcss src/tailwind.css -o src/build/tailwind.css",
+    "production": "cross-env NODE_ENV=production postcss src/tailwind.css -o src/build/tailwind.css",
+    "start": "npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImJeevesh/imjeevesh.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ImJeevesh/imjeevesh/issues"
+  },
+  "homepage": "https://github.com/ImJeevesh/imjeevesh#readme",
+  "dependencies": {
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8.1.1",
+    "tailwindcss": "^1.7.2",
+    "postcss-cli": "^8.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.2",
+    "cssnano": "^4.1.10",
+    "live-server": "^1.2.1"
+  }
+}
