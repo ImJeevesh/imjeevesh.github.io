@@ -14,13 +14,13 @@
   <link rel="stylesheet" href="./build/tailwind.css" />
   <title>Jeevesh Rawat</title>
 </head>
-
-<body class="text-gray-800 dark:bg-gray-600 antialiased">
+<!-- added `dark` to default to dark theme -->
+<body class="dark text-gray-800 dark:bg-gray-600 antialiased">
   <!-- Navbar -->
-  <nav class="top-0 absolute dark:sticky z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg dark:bg-gray-700 dark:bg-opacity-50">
+  <nav class="top-0 sticky z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-gray-200 bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-50">
     <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
       <div class="relative flex justify-between w-auto lg:static lg:block lg:justify-start">
-        <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white">
+        <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-gray-800 dark:text-white">
           Jeevesh Rawat
         </a>
       </div>
@@ -30,30 +30,23 @@
           <li class="flex items-center">
             <a class="text-white hover:text-gray-300 px-3 py-2 flex items-center text-xs uppercase font-bold"
               href="https://www.linkedin.com/in/jeeveshrawat"><i
-                class="text-gray-300 fab fa-linkedin text-lg leading-lg"></i>
+                class="text-gray-800 dark:text-gray-300 fab fa-linkedin text-lg leading-lg"></i>
             </a>
           </li>
           <li class="flex items-center">
             <a class="text-white hover:text-gray-300 px-3 py-2 flex items-center text-xs uppercase font-bold"
-              href="https://github.com/imjeevesh"><i class="text-gray-300 fab fa-github text-lg leading-lg"></i>
+              href="https://github.com/imjeevesh"><i class="text-gray-800 dark:text-gray-300 fab fa-github text-lg leading-lg"></i>
             </a>
           </li>
           <li class="flex items-center">
             <a class="text-white hover:text-gray-300 px-3 py-2 flex items-center text-xs uppercase font-bold"
-              href="mailto:jeeveshrawat@yahoo.com"><i class="text-gray-300 fa fa-envelope text-lg leading-lg"></i>
+              href="mailto:jeeveshrawat@yahoo.com"><i class="text-gray-800 dark:text-gray-300 fa fa-envelope text-lg leading-lg"></i>
             </a>
           </li>
           <li class="flex items-center">
             <button id="action-dark-mode" data-tooltip="Dark Mode" class="text-white hover:text-gray-300 px-3 py-2 flex items-center text-xs uppercase font-bold animate-rotate-in-center">
-              <i class="text-gray-300 fa fa-moon text-lg leading-lg dark:hidden"></i>
-              <i class="text-gray-300 fa fa-sun text-lg leading-lg hidden dark:block"></i>
-            </button>
-          </li>
-          <li class=" items-center hidden">
-            <button
-              class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-0 ml-3 opacity-50 cursor-not-allowed line-through"
-              type="button" style="transition: all 0.15s ease 0s">
-              <i class="fas fa-arrow-alt-circle-down"></i> Download
+              <i class="text-gray-800 dark:text-gray-300 fa fa-moon text-lg leading-lg dark:hidden"></i>
+              <i class="text-gray-800 dark:text-gray-300 fa fa-sun text-lg leading-lg hidden dark:block"></i>
             </button>
           </li>
         </ul>
@@ -62,10 +55,13 @@
   </nav>
   <main class="profile-page">
     <!-- Hero BG -->
-    <section class="relative block h-screen-75">
-      <div class="fixed top-0 w-full h-full bg-center bg-cover" style="
-            background-image: url('https://images.unsplash.com/photo-1510987836583-e3fb9586c7b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
-          ">
+    <section class="relative block h-screen-50">
+      <div class="fixed block dark:hidden top-0 w-full h-full bg-center bg-cover" style="
+        background-image: url('https://images.unsplash.com/photo-1591345046185-5e8df80dd74c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');">
+        <span id="blackOverlay" class="w-full h-full absolute opacity-25 bg-black"></span>
+      </div>
+      <div class="fixed hidden dark:block top-0 w-full h-full bg-center bg-cover" style="
+        background-image: url('https://images.unsplash.com/photo-1510987836583-e3fb9586c7b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');">
         <span id="blackOverlay" class="w-full h-full absolute opacity-25 bg-black"></span>
       </div>
       <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
@@ -79,7 +75,7 @@
     <!-- Profile Container -->
     <section class="relative py-16 bg-gray-300 dark:bg-gray-600">
       <div class="container mx-auto px-4">
-        <div class="relative flex flex-col min-w-0 break-words bg-white dark:bg-gray-800 w-full mb-6 shadow-xl rounded-lg -mt-64">
+        <div class="relative flex flex-col min-w-0 break-words bg-gray-300 dark:bg-gray-800 w-full mb-6 shadow-xl rounded-lg -mt-64">
           <div class="px-6">
             <!-- Profile Image -->
             <div class="flex flex-wrap justify-center">
@@ -125,7 +121,7 @@
               </div>
             </div>
             <!-- Skills -->
-            <div class="w-full mt-10 py-10 sm:px-20 border-t flex justify-center flex-wrap content-around">
+            <div class="w-full mt-10 py-10 sm:px-20 border-t border-gray-400 dark:border-gray-300  flex justify-center flex-wrap content-around">
               <button class="bg-transparent hover:bg-color-ts text-color-ts border-color-ts font-semibold hover:text-white py-2 px-4 m-2 border hover:border-transparent rounded">
                 <i class="devicon-typescript-plain"></i> Typescript
               </button>
@@ -152,7 +148,7 @@
               </button>
             </div>
             <!-- Profile Description -->
-            <div class="py-10 border-t border-gray-300 text-center">
+            <div class="py-10 border-t border-gray-400 dark:border-gray-300  text-center">
               <div class="flex flex-wrap justify-center">
                 <div class="w-full lg:w-9/12 px-4">
                   <p class="mb-4 text-lg leading-relaxed text-gray-800 dark:text-gray-100">

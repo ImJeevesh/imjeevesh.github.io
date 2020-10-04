@@ -1,3 +1,6 @@
+
+const extendVariantsWithDark = ({ after }) => after(['dark']);
+
 module.exports = {
   purge: ["./docs/**/*.html"],
   future: {
@@ -26,23 +29,12 @@ module.exports = {
         "screen-50": "50vh",
         "screen-75": "75vh",
       },
-      animation: {
-        "rotate-in-center":
-          "rotate-in-center 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
-      },
-      keyframes: {
-        "rotate-in-center": {
-          "0%": {
-            transform: "rotate(-360deg)",
-            opacity: "0",
-          },
-          to: {
-            transform: "rotate(0)",
-            opacity: "1",
-          },
-        },
-      },
     },
+  },
+  variants: {
+    display: extendVariantsWithDark,
+    position: extendVariantsWithDark,
+    backgroundOpacity: extendVariantsWithDark
   },
   plugins: [],
 };

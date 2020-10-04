@@ -3,16 +3,6 @@
 @tailwind utilities;
 
 @layer utilities {
-  @variants dark {
-    .hidden {
-      display: none;
-    }
-
-    .block {
-      display: block;
-    }
-  }
-
   /* Tooltips */
   [data-tooltip]:before {
     content: attr(data-tooltip);
