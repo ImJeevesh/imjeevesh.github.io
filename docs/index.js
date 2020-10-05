@@ -1,7 +1,9 @@
 
 
 class DarkModeFeature {
-  static DARK_MODE_KEY = 'imjeevesh.github.io.dark-mode';
+  constructor() {
+    DarkModeFeature.DARK_MODE_KEY = 'imjeevesh.github.io.dark-mode';
+  }
 
   static browserPrefersDark() {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
