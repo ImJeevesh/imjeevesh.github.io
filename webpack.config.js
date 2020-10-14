@@ -1,4 +1,5 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugIn = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
@@ -12,6 +13,18 @@ module.exports = {
   target: 'node',
   module: {
     rules: [
+      {
+        test: /\.(png|jpe?g|gif|eot|svg|ttf|woff2?)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: (url, resourcePath, context) =>
+                `${resourcePath.replace(`${context}/src`, '')}`
+            }
+          },
+        ],
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -61,5 +74,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'tailwind.css'
     }),
-    new CleanWebpackPlugin()],
+    new CleanWebpackPlugin()
+  ],
 };

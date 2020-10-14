@@ -1,16 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <link rel="shortcut icon" href="./assets/img/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-    crossorigin="anonymous" />
   <link rel="stylesheet" href="./tailwind.css" />
   <title>Jeevesh Rawat</title>
 </head>
@@ -30,21 +24,21 @@
           <li class="flex items-center">
             <a class="text-white hover:text-gray-300 px-3 py-2 flex items-center text-xs uppercase font-bold"
               href="https://www.linkedin.com/in/jeeveshrawat"><i
-                class="text-gray-800 dark:text-gray-300 fab fa-linkedin text-lg leading-lg"></i>
+                class="text-gray-800 dark:text-gray-300 fab fa-linkedin text-lg leading-lg"><span class="hidden">Linked In</span></i>
             </a>
           </li>
           <li class="flex items-center">
             <a class="text-white hover:text-gray-300 px-3 py-2 flex items-center text-xs uppercase font-bold"
-              href="https://github.com/imjeevesh"><i class="text-gray-800 dark:text-gray-300 fab fa-github text-lg leading-lg"></i>
+              href="https://github.com/imjeevesh"><span class="hidden">Github</span><i class="text-gray-800 dark:text-gray-300 fab fa-github text-lg leading-lg"></i>
             </a>
           </li>
           <li class="flex items-center">
             <a class="text-white hover:text-gray-300 px-3 py-2 flex items-center text-xs uppercase font-bold"
-              href="mailto:jeeveshrawat@yahoo.com"><i class="text-gray-800 dark:text-gray-300 fa fa-envelope text-lg leading-lg"></i>
+              href="mailto:jeeveshrawat@yahoo.com"><span class="hidden">E-mail</span><i class="text-gray-800 dark:text-gray-300 fa fa-envelope text-lg leading-lg"></i>
             </a>
           </li>
           <li class="flex items-center">
-            <button id="action-dark-mode" data-tooltip="Dark Mode" class="text-white hover:text-gray-300 px-3 py-2 flex items-center text-xs uppercase font-bold animate-rotate-in-center">
+            <button aria-label="Toggle Dark Mode" id="action-dark-mode" data-tooltip="Dark Mode" class="text-white hover:text-gray-300 px-3 py-2 flex items-center text-xs uppercase font-bold animate-rotate-in-center">
               <i class="text-gray-800 dark:text-gray-300 fa fa-moon text-lg leading-lg dark:hidden"></i>
               <i class="text-gray-800 dark:text-gray-300 fa fa-sun text-lg leading-lg hidden dark:block"></i>
             </button>
@@ -188,16 +182,16 @@
           </h5> -->
           <div class="flex mt-6">
             <a href="https://www.linkedin.com/in/jeeveshrawat"
-              class="bg-white dark:bg-gray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3 text-blue-600">
-              <i class="flex fab fa-linkedin"></i>
+              class="flex bg-white dark:bg-gray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3 text-blue-600">
+              <i class="flex fab fa-linkedin"><span class="hidden">Linked In</span></i>
             </a>
             <a href="https://github.com/imjeevesh"
-              class="bg-white dark:bg-gray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3 text-blue-600">
-              <i class="flex fab fa-github"></i>
+              class="flex bg-white dark:bg-gray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3 text-blue-600">
+              <i class="flex fab fa-github"><span class="hidden">Github</span></i>
             </a>
             <a href="mailto:jeeveshrawat@yahoo.com"
-              class="bg-white dark:bg-gray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3 text-blue-600">
-              <i class="flex fa fa-envelope"></i>
+              class="flex bg-white dark:bg-gray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3 text-blue-600">
+              <i class="flex fa fa-envelope"><span class="hidden">E-Mail</span></i>
             </a>
           </div>
         </div>
@@ -290,5 +284,9 @@
   </footer>
 
   <script src="./index.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
 </body>
 </html>
