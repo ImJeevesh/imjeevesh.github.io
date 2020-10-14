@@ -2,7 +2,9 @@
 const extendVariantsWithDark = ({ after }) => after(['dark']);
 
 module.exports = {
-  purge: ["./docs/**/*.html"],
+  purge: {
+    content: ['./docs/**/*.html'],
+  },
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
