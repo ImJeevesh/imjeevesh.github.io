@@ -1,3 +1,2 @@
-import html from './src/index.html';
-import css from './src/tailwind.css';
-import js from './src/index.js';
+(context => context.keys().forEach(key => context(key)))
+(require.context('./src', true, /^(.*\.(js(on)?|css|html|png|ico)$)[^.]*$/im));

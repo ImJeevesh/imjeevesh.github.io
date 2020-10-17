@@ -58,4 +58,7 @@ class DarkModeFeature {
   if (toggleDark) {
     toggleDark.addEventListener('click', () => DarkModeFeature.toggleDarkMode());
   }
+  
+  navigator.serviceWorker?.register('service-worker.js').then(() => {});
 })();
+

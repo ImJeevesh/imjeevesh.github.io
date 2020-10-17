@@ -6,6 +6,7 @@ const path = require('path');
 module.exports = {
   entry: {
     index: path.resolve(__dirname, 'build.js'),
+    'service-worker': path.resolve(__dirname, 'service-worker.js')
   },
   output: {
     path: path.resolve(__dirname, 'docs'),
@@ -14,7 +15,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif|eot|svg|ttf|woff2?)$/i,
+        type: 'javascript/auto',
+        test: /\.json$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: (url, resourcePath, context) =>
+                `${resourcePath.replace(`${context}/src`, '')}`
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(ico|png|jpe?g|gif|eot|svg|ttf|woff2?)$/i,
         use: [
           {
             loader: 'file-loader',
