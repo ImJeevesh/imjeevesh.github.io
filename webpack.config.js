@@ -1,53 +1,73 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugIn = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  context: path.resolve(__dirname, 'src'),
   entry: {
-    index: path.resolve(__dirname, 'build.js'),
+    'index': path.resolve(__dirname, 'build.js'),
     'service-worker': path.resolve(__dirname, 'service-worker.js')
   },
   output: {
     path: path.resolve(__dirname, 'docs'),
+    clean: true
   },
-  target: 'node',
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'index.css'
+    })
+  ],
+  devServer: {
+    allowedHosts: 'auto',
+    port: 9000,
+    static: ['docs']
+  },
   module: {
     rules: [
       {
-        type: 'javascript/auto',
-        test: /\.json$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: (url, resourcePath, context) =>
-                `${resourcePath.replace(`${context}/src`, '')}`
-            }
+        test: /\.js$/i,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
           }
-        ]
+        }
       },
       {
-        test: /\.(ico|png|jpe?g|gif|eot|svg|ttf|woff2?)$/i,
+        test: /\.css$/i,
         use: [
+          MiniCssExtractPlugin.loader,
           {
-            loader: 'file-loader',
+            loader: 'css-loader',
             options: {
-              outputPath: (url, resourcePath, context) =>
-                `${resourcePath.replace(`${context}/src`, '')}`
-            }
+              url: false,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  'postcss-preset-env'
+                ],
+              },
+            },
           },
         ],
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+        test: /\.(eot|svg|ttf|woff2?|png|jpg|gif|ico|json)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: '[name][ext][query]',
+          outputPath: (pathData) => {
+            const segments = pathData.filename.split('/');
+            if (segments[0] === 'src') segments.shift();
+            segments.pop();
+        
+            return segments.join('/');
+          }
+        }
       },
       {
         test: /\.html$/i,
@@ -57,37 +77,12 @@ module.exports = {
           {
             loader: 'html-loader',
             options: {
-              attributes: false,
+              sources: false,
               minimize: true
             },
           },
         ],
       },
-      {
-        test: /\.css$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [
-                  [
-                    'postcss-preset-env',
-                  ],
-                ],
-              },
-            },
-          }
-        ],
-      },
-    ],
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'tailwind.css'
-    }),
-    new CleanWebpackPlugin()
-  ],
+    ]
+  }
 };

@@ -23,12 +23,10 @@
   [data-tooltip]:before {
     content: attr(data-tooltip);
     position: absolute;
-    
-    top: 100%;
-    left: -50%;
+    top: 80%;
     min-width: 90px;
     max-width: 200px;
-    padding: 2px;
+    padding: 4px;
     border-radius: 2px;
     background: #000;
     color: #fff;
@@ -38,5 +36,9 @@
 
   [data-tooltip]:hover:before {
     display: block;
+  }
+
+  .fa.hidden {
+    display: none;
   }
 }

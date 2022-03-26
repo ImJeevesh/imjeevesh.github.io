@@ -3,7 +3,7 @@ const staticAssets = [
   './',
   './index.html',
   './index.js',
-  './tailwind.css'
+  './index.css'
 ];
 
 // TODO: use this when we introduce hashed paths
